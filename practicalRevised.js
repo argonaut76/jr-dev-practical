@@ -24,7 +24,7 @@ function removePunct(inputArray) {
 
 // 3. Write a single line of JavaScript that returns the total impact score of all articles in the following "documents" array
 
-documents.map(element => { element.citations.reduce( (sum, val) => sum + get_impact_score(val) ) })
+documents.reduce( (sum, doc) => elements.doc_type === "Article" ? sum + get_impact_score(doc.citations) : null, 0 )
 
 
 function get_impact_score(citations,year) {
